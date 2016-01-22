@@ -1,0 +1,58 @@
+body {
+    font-family: Helvetica, "Helvetica Neue", "Myriad Pro", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight:lighter;
+    margin:0 auto;
+    padding:0;
+}
+
+code {
+	background-color:rgba(238, 238, 238, 0.35) !important;
+	font-family: "menlo";
+	font-size: 0.6rem;
+	border:1px solid lightgrey;
+	margin:20px;
+}
+
+#site-title {
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight:normal;
+    color:black;
+    margin:0 auto;
+    margin-top:40px;
+    
+}
+
+#site-title a:link, #site-title a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+#site-description {
+    text-align: center;
+    /*margin-bottom: 20px;*/
+    margin-top:10px;
+}
+
+#post-title {
+    text-align: center;
+    font-size: 40px;
+    border-bottom: 1px dashed lightgrey;
+    width:56%;
+    margin:0 auto;
+    padding-bottom:5px;
+    margin-bottom:20px;
+    margin-top:40px;
+    /*font-weight:100;*/
+}
+
+#post-content {
+    width:56%;
+    max-width:1000px;
+    min-width:500px;
+    margin:0 auto;
+    line-height:1.5;
+    margin-bottom:100px;
+}

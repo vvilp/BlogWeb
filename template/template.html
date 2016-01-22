@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Test</title>
+
+    <link rel="shortcut-icon"
+          type="image/png"
+          href="image/favicon.png" />
+
+    <!--jQuery-->
+    <!--script type="text/javascript" src="./lib/jquery-1.11.1.min.js"></script-->
+    <!--Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+
+    <!--highlightJS-->
+    <link rel="stylesheet" type="text/css" href="../assets/lib/highlight/styles/atelier-forest.light.css">
+    <script src="../assets/lib/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body>
+
+<div id="site-title"><a href="#">Site Title</a></div>
+<div id="site-description">site description</div>
+
+<div id="post-title"> Post Title</div>
+
+
+<div id="post-content">
+<h1 id="introduction">Introduction</h1>
+<p>I have been studying machine learning algorithms for quite a long time, especially, Neural Networks. Neural Networks can be seen a large groups of methods and models which also include the current hot topics - deep learning. All of these topics are not mystical and intimidating at all. Some simple math equation and some logic skills are all about it.</p>
+<p>Base on my research and studying, I haven't found a article that is good enough to describe the whole algorithm in a understandable way especially the mathematical principles behind it. Some students and researchers might be using Neural Networks 'expertly' in their daily works. However you cannot say you are understand it if you can't derive all the formula of Neural Networks by yourself.</p>
+<p>When you try to create your own Neural Networks from the scratch, you will find there are so many details in the fog. <strong>The details are everything</strong>.</p>
+<p>I will write a series of article to describe the whole algorithm of Neural Network with the examples of code. I hope I can help those who is struggling on all of these with my own words and experiences.</p>
+<h1 id="content">Content</h1>
+<p>The whole series of Neural Networks in here will include:</p>
+<ul>
+<li>The basic of Neural Networks</li>
+<li>Deep in Back propagation algorithms</li>
+<li>Improvement of back propagation algorithms</li>
+<li>Deep Learning - convolutional Neural Network</li>
+<li>Neural Networks in real world - genetic data</li>
+</ul>
+<h1 id="prerequisite">Prerequisite</h1>
+<p>I will guarantee that you will gain a better understanding of Neural Networks after you look through my articles. To understand the whole content, you must have the following basic knowledge:</p>
+<ul>
+<li>The basic calculus.</li>
+<li>The machine learning.</li>
+<li>programming.</li>
+</ul>
+<p>The math that you need is not intimidating at all. You will need understand derivative, differential and partial derivative. Just google it. There are thousands of articles and tutorial notes online. You will also need to know about the machine learning. what on earth is machine learning? What problem can it solve? In this article I will use C# to show you some demos.</p>
+<pre><code>int main(int argc, char **argv){
+  TCADB *adb;
+  char *key, *value;
+
+  /* create the object */
+  adb = tcadbnew();
+
+  /* open the database */
+  if(!tcadbopen(adb, &quot;casket.tch&quot;)){
+    fprintf(stderr, &quot;open error\n&quot;);
+  }
+
+  /* store records */
+  if(!tcadbput2(adb, &quot;foo&quot;, &quot;hop&quot;) ||
+     !tcadbput2(adb, &quot;bar&quot;, &quot;step&quot;) ||
+     !tcadbput2(adb, &quot;baz&quot;, &quot;jump&quot;)){
+    fprintf(stderr, &quot;put error\n&quot;);
+  }
+
+  /* retrieve records */
+  value = tcadbget2(adb, &quot;foo&quot;);
+  if(value){
+    printf(&quot;%s\n&quot;, value);
+    free(value);
+  } else {
+    fprintf(stderr, &quot;get error\n&quot;);
+  }
+
+  /* traverse records */
+  tcadbiterinit(adb);
+  while((key = tcadbiternext2(adb)) != NULL){
+    value = tcadbget2(adb, key);
+    if(value){
+      printf(&quot;%s:%s\n&quot;, key, value);
+      free(value);
+    }
+    free(key);
+  }
+
+  /* close the database */
+  if(!tcadbclose(adb)){
+    fprintf(stderr, &quot;close error\n&quot;);
+  }
+
+  /* delete the object */
+  tcadbdel(adb);
+
+  return 0;
+}</code></pre>   
+
+
+<h4 id="the-quadratic-formula">The Quadratic Formula</h4>
+\begin{equation}
+  x = a_0 + \cfrac{1}{a_1
+          + \cfrac{1}{a_2
+          + \cfrac{1}{a_3 + \cfrac{1}{a_4} } } }
+\end{equation}
+<h4 id="the-quadratic-formula-1">The Quadratic Formula</h4>
+\begin{equation}
+\frac{
+    \begin{array}[b]{r}
+      \left( x_1 x_2 \right)\\
+      \times \left( x&#39;_1 x&#39;_2 \right)
+    \end{array}
+  }{
+    \left( y_1y_2y_3y_4 \right)
+  }
+\end{equation}
+M =
+\begin{bmatrix}
+       \frac{5}{6} &amp; \frac{1}{6} &amp; 0           \\[0.3em]
+       \frac{5}{6} &amp; 0           &amp; \frac{1}{6} \\[0.3em]
+       0           &amp; \frac{5}{6} &amp; \frac{1}{6}
+     \end{bmatrix}
+\begin{equation}
+\left(\!
+    \begin{array}{c}
+      n \\
+      r
+    \end{array}
+  \!\right) = \frac{n!}{r!(n-r)!}
+\end{equation}
+
+\begin {equation}P(x) = \frac{1}{{\sigma \sqrt {2\pi } }}e^{{{ - \left( {x - \mu } \right)^2 } \mathord{\left/ {\vphantom {{ - \left( {x - \mu } \right)^2 } {2\sigma ^2 }}} \right. \kern-\nulldelimiterspace} {2\sigma ^2 }}} \end{equation}
+
+</div>
+
+<script type="text/javascript"     src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">  
+MathJax.Hub.Config({  
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script> 
+
+</body>
+</html>
+
+<script>
+
+</script>
